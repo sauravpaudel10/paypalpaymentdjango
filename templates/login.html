@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+    .sidebar ~ .mainhomecontent {
+        margin-left: 260px;
+        transition: width 0.3s ease, padding 0.3s ease;
+    }
+  
+    .sidebar.close ~ .mainhomecontent  {
+       margin-left:  80px;
+       transition: width 0.3s ease, padding 0.3s ease;
+    } 
+    body{
+      margin: 50px;
+    }
+    </style>
+</head>
+<body>
+    <br><br><br><br><br>
+<main class="mainhomecontent">
+    <form action="" method="POST">
+        {% csrf_token %}
+      <p> {{form.as_p}} </p>
+      <div> <button type="submit">login</button> </div>
+    </form>
+
+
+
+        <small>need an account?
+    <a href=" {% url 'register' %} "> sign in</a>
+        </small>
+ </main> 
+</body>
+</html>
